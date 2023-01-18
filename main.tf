@@ -35,7 +35,7 @@ resource "azurerm_resource_group" "rg" {
 # Create a virtual network
 resource "azurerm_virtual_network" "vnet" {
   name                = "vnet-lan"
-  address_space       = ["10.0.17.0/16"]
+  address_space       = ["10.0.16.0/16"]
   location            = "westeurope"
   resource_group_name = azurerm_resource_group.rg.name
 }
