@@ -5,6 +5,17 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 3.0.2"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = "3.0.1"
+    }
+  }
+  cloud {
+    organization = "arlindtereziu"
+
+    workspaces {
+      name = "gh-actions"
+    }
   }
   backend "azurerm" {
     resource_group_name  = "rg-tfstate"
