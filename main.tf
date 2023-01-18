@@ -6,12 +6,19 @@ terraform {
       version = "~> 3.0.2"
     }
   }
-  backend "azurerm" {
-    resource_group_name  = "rg-tfstate"
-    storage_account_name = "attfstatefile"
-    container_name       = "tfstatefiles"
-    key                  = "tfgitaction.tfstate"
+  cloud {
+    organization = "arlindtereziu"
+
+    workspaces {
+      name = "gh-actions"
+    }
   }
+  #   backend "azurerm" {
+  #     resource_group_name  = "rg-tfstate"
+  #     storage_account_name = "attfstatefile"
+  #     container_name       = "tfstatefiles"
+  #     key                  = "tfgitaction.tfstate"
+  #   }
 
   required_version = ">= 1.1.0"
 }
