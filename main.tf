@@ -15,7 +15,16 @@ terraform {
   }
   required_version = ">= 1.1.0"
 }
-
 provider "azurerm" {
   features {}
+}
+
+resource "azurerm_resource_group" "rg-networking" {
+  name     = "rg-networking"
+  location = "West Europe"
+  tags = {
+    environment = "production"
+    source = "terraform"
+    project = "lab"
+  }
 }
