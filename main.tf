@@ -5,10 +5,6 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 3.0.2"
     }
-    random = {
-      source  = "hashicorp/random"
-      version = "3.0.1"
-    }
   }
   cloud {
     organization = "arlindtereziu"
@@ -17,12 +13,12 @@ terraform {
       name = "gh-actions"
     }
   }
-#   backend "azurerm" {
-#     resource_group_name  = "rg-tfstate"
-#     storage_account_name = "attfstatefile"
-#     container_name       = "tfstatefiles"
-#     key                  = "tfgitaction.tfstate"
-#   }
+  #   backend "azurerm" {
+  #     resource_group_name  = "rg-tfstate"
+  #     storage_account_name = "attfstatefile"
+  #     container_name       = "tfstatefiles"
+  #     key                  = "tfgitaction.tfstate"
+  #   }
 
   required_version = ">= 1.1.0"
 }
